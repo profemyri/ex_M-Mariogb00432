@@ -1,14 +1,50 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-   ..........
-    <link rel="stylesheet" href="ex_html-css-js.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedido de Pescaíto</title>
 </head>
-<body>
-   ..........
+<body background-color="#faf3e0">
+     
+    <h1>¡¡Pide aquí tu rico pescaíto!!</h1>
+    <img src="pescado_frito.jpg" alt="Bandeja pescado frito">
+    
+    <form action="pedido" method="post" >
+            
+            <legend>Datos del cliente</legend>
+            <label>Nombre: <input type="text" name="nombre" required></label><br>
+            <label>Apellidos: <input type="text" name="apellidos" required></label><br>
+            <label>Email: <input type="email" name="email" required></label><br>
+            <label>Dirección: <input type="text" name="direccion" minlength="18" required></label><br>
+            <label>Teléfono: <input type="tel" name="telefono" pattern="\d{9}" required></label><br>
+            <label>Hora de entrega: <input type="time" name="hora_entrega" required></label>
+       
+            <legend>PEdido de pescado</legend>
+            <label>Tipo de pescado:</label><br>
+            <input type="text" name="tipo_pescado" id="Calamares" required> Calamares<br>
+            <input type="text" name="tipo_pescado" id="Adobo"> Adobo<br>
+            <input type="text" name="tipo_pescado" id="Boquerones"> Boquerones<br>
+            
+            <label>Nº de raciones: <input type="number" name="raciones" min="1" max="5" required></label>
 
-    <script src="ex_html-css-js.js"></script>
+            <label>Acompañamiento:</label>
+            <input type="checkbox" name="acompanamiento[]" id="Patatas fritas"> Patatas fritas<br>
+            <input type="checkbox" name="acompanamiento[]" id="Ensaladilla"> Ensaladilla<br>
+            <input type="checkbox" name="acompanamiento[]" id="Botella de Manzanilla"> Botella de Manzanilla<br>
+        
+        
+            <legend>Método de pago</legend>
+            <input type="text" name="pago" id="Efectivo" required> Efectivo<br>
+            <input type="text" name="pago" id="Tarjeta"> Tarjeta<br>
+            <input type="text" name="pago" id="PayPal"> PayPal<br>
 
+
+            <input type="text" maxlength="150"><br>
+
+            <button type="submit">Enviar pedido</button>
+            <footer>Mario García Bernal</footer>
+
+    </form>
 </body>
 </html>
